@@ -5,6 +5,7 @@ import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
 import { Tooltip } from "@mui/material";
 import { convertNumbers } from "../../../functions/convertNumbers";
 import { Link } from "react-router-dom";
+import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
 
 function List({coin}){
     return(
@@ -83,6 +84,19 @@ function List({coin}){
                </p>
               </td>
               </Tooltip>
+              <Tooltip title="Market Cap"  > 
+              <td className=".op">
+              {coin.price_change_percentage_24h>0? (
+                <div className="marked chip-green">
+                    <StarBorderRoundedIcon/>
+                </div>):(
+                     <div className="marked chip-red">
+                     <StarBorderRoundedIcon/>
+                 </div>
+                )}
+              </td>
+              </Tooltip>
+              
            
         </tr>
         </Link>

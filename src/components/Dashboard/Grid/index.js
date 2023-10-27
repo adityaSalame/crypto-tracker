@@ -2,6 +2,8 @@ import React from "react";
 import "./style.css";
 import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
+import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
+import StarRoundedIcon from "@mui/icons-material/StarRounded";
 import { Link } from "react-router-dom";
 
 function Grid({coin}){
@@ -10,13 +12,22 @@ function Grid({coin}){
         <div className={`grid-container ${
             coin.price_change_percentage_24h<0 && "grid-container-red"
         }`}>
-            <div className="info-flex">
-               
+            <div className="info-flex container-marked">
+                <div className="info-flex">
                 <img src={coin.image} className="coin-logo"/>
                 <div className="name-col">
                 <p className="coin-symbol">{coin.symbol}</p>
                 <p className="coin-name"> {coin.name}</p>
-            </div>
+                </div>
+                </div>
+                {coin.price_change_percentage_24h>0? (
+                <div className="marked chip-green">
+                    <StarBorderRoundedIcon/>
+                </div>):(
+                     <div className="marked chip-red">
+                     <StarBorderRoundedIcon/>
+                 </div>
+                )}
             </div>
             {coin.price_change_percentage_24h>0? (
             <div className="chip-flex">

@@ -80,6 +80,32 @@
     transition: all 0.3s;
 }
 
+.container-marked{
+    justify-content: space-between;
+}
+
+.marked{
+    display: flex;
+    justify-content: center;
+    color: var(--green) !important;
+    transition: all 0.3s;
+    border: 1px solid var(--green) !important;
+    border-radius: 5rem;
+    min-width: 34px;
+    min-height: 34px;
+    height:50px;
+    width:50px;
+    align-items: center;
+}
+
+.marked:hover{
+    background-color: var(--green) !important;
+    color: var(--white) !important;
+    transition: all 0.3s;
+    
+    
+}
+
 .chip-red{
     border:2px solid var(--red) !important;
     color: var(--red) !important;
@@ -90,6 +116,8 @@
     color: var(--white) !important;
     transition: all 0.3s;
 }
+
+
 
 .icon-chip{
     border:2px solid var(--green);
