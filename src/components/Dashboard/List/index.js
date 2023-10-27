@@ -85,7 +85,7 @@ function List({coin}){
               </td>
               </Tooltip>
               <Tooltip title="Market Cap"  > 
-              <td className=".op">
+              <td className="marked-container-list">
               {coin.price_change_percentage_24h>0? (
                 <div className="marked chip-green">
                     <StarBorderRoundedIcon/>

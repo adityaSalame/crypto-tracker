@@ -35,10 +35,9 @@
     display: none;
 }
 
-.marked{
-    
-    margin-left:3rem;
-   
+.marked-container-list{
+    display: flex;
+    justify-content: end;
 }
 
 
