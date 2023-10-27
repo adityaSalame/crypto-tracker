@@ -9,6 +9,7 @@
     text-align: center;
     min-width: 100px;
     text-transform: capitalize;
+    
 }
 
 .btn:hover{
@@ -26,6 +27,7 @@
     cursor: pointer;
     text-align: center;
     min-width: 100px;
+    
 }
 
 .outlined-btn:hover{

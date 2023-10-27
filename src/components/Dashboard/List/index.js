@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./style.css";
 import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
@@ -6,8 +6,15 @@ import { Tooltip } from "@mui/material";
 import { convertNumbers } from "../../../functions/convertNumbers";
 import { Link } from "react-router-dom";
 import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
+import StarRoundedIcon from "@mui/icons-material/StarRounded";
+
+import { MyWatchlist } from "../../../functions/MyWatchlist";
+import {IconButton} from "@mui/material";
+import { RemoveFromWatchlist } from "../../../functions/RemoveFromWatchlist";
+import { AddToWatchlist } from "../../../functions/AddToWatchList";
 
 function List({coin}){
+    const [inlist, setInList]= useState(MyWatchlist(coin.id));
     return(
         <Link to={`/coin/${coin.id}`}>
         <tr className="list-row">
@@ -84,14 +91,48 @@ function List({coin}){
                </p>
               </td>
               </Tooltip>
-              <Tooltip title="Market Cap"  > 
+              <Tooltip title="WatchList"  > 
               <td className="marked-container-list">
               {coin.price_change_percentage_24h>0? (
-                <div className="marked chip-green">
-                    <StarBorderRoundedIcon/>
-                </div>):(
-                     <div className="marked chip-red">
-                     <StarBorderRoundedIcon/>
+                <div >
+                    <IconButton onClick={(e) => {
+                    e.preventDefault();
+                    if (inlist) {
+                      RemoveFromWatchlist(coin.id);
+                        setInList(false);
+                    } else {
+                      AddToWatchlist(coin.id);
+                      setInList(true);
+                    }
+                    console.log("this->",inlist);
+                }
+                }
+                >
+                    {inlist? 
+                    <StarRoundedIcon className=" marked chip-green"/>
+                     : 
+                    <StarBorderRoundedIcon className=" marked chip-green" 
+                    />}
+                </IconButton>
+                </div>)
+                :
+                (
+                     <div >
+                     <IconButton onClick={(e) => {
+                    e.preventDefault();
+                    if (inlist) {
+                      RemoveFromWatchlist(coin.id);
+                        setInList(false);
+                    } else {
+                      AddToWatchlist(coin.id);
+                      setInList(true);
+                    }
+                    console.log("this->",inlist);
+                }
+                }
+                >
+                    {inlist? <StarRoundedIcon className="marked chip-red"/> : <StarBorderRoundedIcon className="marked chip-red"/>}
+                </IconButton>
                  </div>
                 )}
               </td>
