@@ -1,7 +1,9 @@
 export const convertNumbers=(number)=>{
 const numberWithCommas= number.toLocaleString();
 var arr = numberWithCommas.split(",");
-if(arr.length==5){
+if(arr.length==6){
+    return arr[0]+"."+arr[1].slice(0,2)+"Q";
+}else if(arr.length==5){
     return arr[0]+"."+arr[1].slice(0,2)+"T";
 }
 else if(arr.length==4){
