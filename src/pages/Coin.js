@@ -88,8 +88,9 @@ function CoinPage(){
             <LineChart chartData={chartData} priceType={priceType}/>
             </div>
             <CoinInfo heading={coinData.name} desc={coinData.desc}/>
+            <Footer/> 
             </>)}
-           <Footer/> 
+           
         </div>
     )
 }

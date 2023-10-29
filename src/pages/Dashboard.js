@@ -73,9 +73,11 @@ function DashboardPage(){
                 page={page} 
                 handlePageChange={handlePageChange}/>
             )}
+            <Footer/>
          </div>
+         
            )}
-           <Footer/>
+           
          </> 
          
     );
