@@ -4,6 +4,8 @@ import Button from "../../Common/Button";
 import gradient from "../../../assets/gradient 1.png"
 import phone from "../../../assets/Picture1.png"
 import {motion} from "framer-motion";
+import { RWebShare } from "react-web-share";
+import { Link } from "react-router-dom";
 
 function MainComponent(){
     return(
@@ -38,8 +40,23 @@ function MainComponent(){
                 animate={{opacity:1, x:0}}
                 transition={{duration:0.5,delay:1.5}}
                 >
-                    <Button text={"Dashboard"}/>
-                    <Button text={"Share"} outlined={true}/>
+                    <Link to="/dashboard">
+                        <Button 
+                        text={"Dashboard"}
+                        onClick={()=>{console.log("click")}}
+                        />
+                    </Link>
+                    
+                    <RWebShare
+                        data={{
+                        text: "Crypto Tracker made using React JS. Now track top 100 cryptocurrencies trends live.",
+                        url: "https://crypto-tracker-2023.netlify.app",
+                        title: "Crypto Tracker.",
+                        }}
+                        onClick={() => console.log("shared successfully!")}
+                    >
+                                <Button text={"Share"} outlined={true}/>
+                    </RWebShare>
                 </motion.div>
             </div>
             <div className="phone-container">

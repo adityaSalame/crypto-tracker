@@ -8,6 +8,14 @@
 
 }
 
+.total_volume{
+    color:rgb(244, 186, 165);
+}
+
+.market_cap{
+    color:#edae07;;
+}
+
 .grid-container:hover{
     border-color:var(--green);
     transition: all 0.3s;
@@ -147,8 +155,100 @@
     font-weight: 600;
 }
 
-.total-volume, .market_cap{
-    color: var(--grey);
+.total_volume, .market_cap{
+    
     font-size: 1rem;
     font-weight: 500;
+}
+
+@media only screen and (max-width:800px){
+    
+    .td-total-volume{
+        display: none;
+    }
+    #mui-p-57345-P-list.MuiTabPanel-root.css-13xfq8m-MuiTabPanel-root{
+        padding:4px;
+        display: flex;
+        justify-content: center;
+    }
+    
+   .grid-container{
+    width:15rem;
+    padding:1rem;
+    height:15rem;
+   }
+
+   .container-marked{
+    margin:0.2rem;
+   }
+   
+
+    .mobile-td-mkt{
+        display: block;
+    }
+
+    .list-row{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        margin:8px;
+        gap:0.1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        
+    }
+
+    div .grid-chip-flex{
+        display: flex !important;
+        flex-direction: row;
+        gap:5px;
+    }
+
+    .marked-container-list{
+        display: block;
+        justify-content: center;
+    }
+
+    .grid-price-chip{
+        padding:0.2rem;
+        width:100px;
+        margin-bottom: 1rem;
+    }
+
+    .coin-symbol{
+        font-size: medium;
+    }
+
+    .coin-name{
+        font-size: small;
+    }
+
+    .coin-logo{
+        width:30px;
+        height:30px;
+    }
+
+    .list-table{
+        
+        margin:2px;
+        width:350px;
+    }
+
+    tr .list-row{
+        margin:4px;
+    }
+
+    .td-image{
+        margin:8px;
+        display: flex;
+    }
+
+    .name-col{
+        margin:0.1rem;
+    }
+
+    .coin-price{
+        margin-left:10px;
+        padding-left: 2px;;
+    }
 }
