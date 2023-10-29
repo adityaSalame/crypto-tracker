@@ -13,6 +13,7 @@ import { convertDate } from "../functions/convertDate";
 import SelectDays from "../components/Coin/SelectDays";
 import { settingChartData } from "../functions/settingChartData";
 import TogglePriceType from "../components/Coin/PriceType";
+import Footer from "../components/Common/Footer";
 
 function CoinPage(){
     const {id}=useParams();
@@ -35,7 +36,7 @@ function CoinPage(){
             coinObject(setCoinData, data);
             const prices= await getCoinPrices(id, days, priceType);
             if(prices.length >0){
-                console.log("wo");
+                
                 settingChartData(setchartData, prices);
                 setIsLoading(false);
             }
@@ -88,7 +89,7 @@ function CoinPage(){
             </div>
             <CoinInfo heading={coinData.name} desc={coinData.desc}/>
             </>)}
-            
+           <Footer/> 
         </div>
     )
 }

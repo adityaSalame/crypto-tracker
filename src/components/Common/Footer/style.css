@@ -2,4 +2,18 @@
     width:100%;
     background-color: lightblue;
     color: #000;
+    height: 5rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    
+    padding-top: 1.5rem;
+}
+
+@media only screen and ( max-width:800px){
+    .footer{
+        height: 2rem;
+        font-size:medium;
+        padding:4px;
+    }
 }
