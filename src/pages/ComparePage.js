@@ -103,10 +103,7 @@ function ComparePage(){
             crypto2={crypto2}
             handleCoinChange={handleCoinChange}
             />
-            <SelectDays 
-            days={days} 
-            handleDaysChange={handleDaysChange} 
-            noPTag={true}/>
+            
             </div>
             <div className="grey-wrapper" style={{padding:"0rem 1rem"}}>
 
@@ -117,6 +114,10 @@ function ComparePage(){
             <List coin={crypto2data}/>
             </div>
             <div className="grey-wrapper">
+            <SelectDays 
+            days={days} 
+            handleDaysChange={handleDaysChange} 
+            noPTag={true}/>
             <TogglePriceType 
                     priceType={priceType}
                     handlePriceTypeChange={handlePriceTypeChange}
