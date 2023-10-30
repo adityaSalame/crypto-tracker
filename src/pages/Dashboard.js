@@ -17,7 +17,7 @@ function DashboardPage(){
     const [paginatedCoins,setPaginatedtCoins]=useState([]);
     const [search, setSearch]= useState("");
     const [isLoading, setIsLoading]=useState(true);
-
+    const [scroll, setScroll]=useState(true);
     const [page, setPage] = useState(1);
     
     const handlePageChange = (event, value) => {
@@ -30,6 +30,7 @@ function DashboardPage(){
 
     const onSearchChange=(e)=>{
         setSearch(e.target.value);
+      
     }
 
     var filteredCoins = coins.filter((item)=>
@@ -40,6 +41,8 @@ function DashboardPage(){
      
      )
     );
+        
+        
 
     useEffect(()=>{
         getData();
@@ -66,17 +69,20 @@ function DashboardPage(){
             <div>
             <Search search={search} onSearchChange={onSearchChange}/>
             <Tabs coins={search? filteredCoins : paginatedCoins}
-                setSearch={setSearch}
+                setSearch={setSearch} 
+                    
+                
             />
             {!search && 
             (<PaginationComponent 
                 page={page} 
                 handlePageChange={handlePageChange}/>
             )}
-            <Footer/>
+            
          </div>
          
            )}
+           <Footer filteredCoins={filteredCoins}  />
            
          </> 
          

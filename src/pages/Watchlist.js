@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "../components/Common/Button";
-
+import { Link } from "react-router-dom";
 import Header from "../components/Common/Header";
 import Loader from "../components/Common/Loader";
 import Tabs from "../components/Dashboard/Tabs";
@@ -26,26 +26,31 @@ function Watchlist() {
 
   return (
     <div>
-        
+        <Header/>
       {loading || !coins ? (
         <Loader />
       ) : (
         <div style={{ minHeight: "90vh" }}>
           {myWatchlist?.length == 0 || !coins ? (
-            <div>
-              
-              <h1 >
-                No Items in the Watchlist
-              </h1>
-              <div >
-                <a href="/dashboard">
-                  <Button text={"Dashboard"} />
-                </a>
-              </div>
-            </div>
+             <div >
+             <div className="no-items">
+             <h1 >
+             No items in the Watchlist!
+             </h1>
+             </div>
+             <div className="clear" >
+             <Link to="/dashboard">
+                        <Button 
+                        text={"Dashboard"}
+                        onClick={()=>{console.log("click")}}
+                        />
+                </Link>
+             </div>
+           </div>
+            
           ) : (
             <div >
-              <Header />
+              
               <Tabs coins={myWatchlist} isWatchlistPage={true} />
             </div>
           )}
