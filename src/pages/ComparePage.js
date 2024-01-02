@@ -12,6 +12,7 @@ import CoinInfo from "../components/Coin/CoinInfo";
 import { settingChartData } from "../functions/settingChartData";
 import LineChart from "../components/Coin/LineChart";
 import TogglePriceType from "../components/Coin/PriceType";
+import Footer from "../components/Common/Footer";
 
 function ComparePage(){
 
@@ -85,6 +86,7 @@ function ComparePage(){
         setcrypto1(event.target.value);
         const data = await getcoinData(event.target.value);   
         coinObject(setCrypto1data, data);
+        setIsLoading(false);
      }
 
   

@@ -10,9 +10,9 @@ import Grid from "../Grid";
 import List from "../List";
 import Button from "../../Common/Button";
 
-export default function Tabs({coins, setSearch, isWatchlistPage}) {
+export default function Tabs({coins, setSearch, isWatchlistPage, scroll}) {
   const [value, setValue] = useState("grid");
-
+  
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
